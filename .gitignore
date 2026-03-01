@@ -1,5 +1,5 @@
 # =========================
-# Node modules
+# Node.js / Backend
 # =========================
 node_modules/
 
@@ -38,11 +38,51 @@ jspm_packages/
 dist/
 build/
 
-# OS files
+# Optional: if using nodemon
+nodemon.json
+
+# Optional: local session storage files
+sessions/
+
+# =========================
+# Frontend / React / Next.js / Vite / Svelte / Angular
+# =========================
+# Build output
+.next/
+.out/
+.nuxt/
+.vercel/
+.parcel-cache/
+.vite/
+dist/
+build/
+
+# Storybook
+.out-storybook/
+
+# Svelte / SvelteKit
+.svelte-kit/
+
+# Angular
+.angular/
+
+# Package lock files (optional, but often ignored for personal dev)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =========================
+# OS / IDE / Temporary
+# =========================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
 Thumbs.db
 
-# IDE / Editor folders
+# Editors
 .vscode/
 .idea/
 *.swp
@@ -51,11 +91,9 @@ Thumbs.db
 tmp/
 temp/
 
-# Optional: if using TypeScript
-*.tsbuildinfo
-
-# Optional: if using nodemon
-nodemon.json
-
-# Optional: local session storage files
-sessions/
+# =========================
+# Testing / Coverage
+# =========================
+jest-cache/
+jest-report/
+coverage/
