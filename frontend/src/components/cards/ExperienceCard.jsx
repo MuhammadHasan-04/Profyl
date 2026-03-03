@@ -39,7 +39,7 @@ export const ExperienceCard = ({ experience, setExperience }) => {
           className="flex flex-col items-center text-blue-500"
         >
           <CirclePlus className="cursor-pointer" />
-          <p>Add More</p>
+          <p className="text-sm">Add More</p>
         </button>
       </div>
 
@@ -54,7 +54,8 @@ export const ExperienceCard = ({ experience, setExperience }) => {
               value={exp.title}
               onChange={(e) => handleChange(index, "title", e.target.value)}
               placeholder="Senior Creative Designer"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors placeholder:text-slate-300 duration-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 
@@ -68,7 +69,8 @@ export const ExperienceCard = ({ experience, setExperience }) => {
                 value={exp.company}
                 onChange={(e) => handleChange(index, "company", e.target.value)}
                 placeholder="XYZ Company"
-                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300"
+                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors placeholder:text-slate-300 duration-300 placeholder:text-sm
+md:placeholder:text-base"
               />
             </div>
 
@@ -81,7 +83,8 @@ export const ExperienceCard = ({ experience, setExperience }) => {
                 value={exp.dates}
                 onChange={(e) => handleChange(index, "dates", e.target.value)}
                 placeholder="Jan 2022 - Present"
-                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300"
+                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 placeholder:text-sm
+md:placeholder:text-base"
               />
             </div>
           </div>
@@ -96,7 +99,8 @@ export const ExperienceCard = ({ experience, setExperience }) => {
                 handleChange(index, "description", e.target.value)
               }
               placeholder="Describe your responsibilities and achievements..."
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 resize-none"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors placeholder:text-slate-300 duration-300 resize-none placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 

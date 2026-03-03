@@ -10,8 +10,25 @@ import { SkillsCard } from "../components/cards/SkillsCard";
 import { DefaultTemplate } from "../components/Templates/DefaultTemplate";
 import { CleanTemplate } from "../components/Templates/CleanTemplate";
 import { Navigate, useNavigate } from "react-router-dom";
+// import jsPDF from "jspdf";
+// import html2canvas from "html2canvas";
 export const ResumeGeneration = ({ currentTemplate }) => {
   const navigate = useNavigate();
+  // const ref = useRef();
+
+  // const handleExportPDF = () => {
+  //   const input = ref.current;
+  //   html2canvas(input, { scale: 2 }).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const pdf = new jsPDF("p", "mm", "a4");
+
+  //     const pdfWidth = pdf.internal.pageSize.getWidth();
+  //     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+  //     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  //     pdf.save("resume.pdf");
+  //   });
+  // };
   const [resumeData, setResumeData] = useState({
     info: {
       fullName: "",
@@ -35,7 +52,7 @@ export const ResumeGeneration = ({ currentTemplate }) => {
   });
   return (
     <>
-      <nav className=" flex justify-between items-center px-5 py-3 shadow-sm lg:py-5 lg:px-15 ">
+      <nav className="flex flex-col sm:flex-row justify-between items-center px-5 py-3 shadow-sm lg:py-5 lg:px-15 gap-3 sm:gap-0">
         <div className="flex items-center gap-2 cursor-pointer">
           <div className="bg-black p-2 rounded-lg">
             <FileText className="text-white w-5 h-5" />
@@ -45,14 +62,17 @@ export const ResumeGeneration = ({ currentTemplate }) => {
           </h1>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-row gap-4">
           <button
             onClick={() => navigate("/templates")}
-            className="cursor-pointer"
+            className="bg-gray-200 text-gray-900 px-3 py-2 sm:px-3 md:px-5 rounded-lg font-medium hover:bg-gray-300 transition-all duration-200"
           >
             Templates
           </button>
-          <button className="bg-black text-white px-3 py-2 sm:px-3 md:px-5 rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 shadow-sm hover:shadow-md">
+          <button
+            // onClick={handleExportPDF}
+            className="bg-black text-white px-3 py-2 sm:px-3 md:px-5 rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+          >
             Export PDF
           </button>
         </div>

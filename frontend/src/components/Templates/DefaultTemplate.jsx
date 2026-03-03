@@ -9,12 +9,12 @@ export const DefaultTemplate = ({ data }) => {
       phone: "",
       location: "",
       summary: "", */}
-      <div className="p-10 bg-white w-full  mx-auto">
-        <h1 className="font-serif text-3xl font-bold text-gray-900">
+      <div className=" bg-white w-full  mx-auto md:p-10">
+        <h1 className="font-serif text-2xl font-bold text-gray-900 md:text-3xl">
           {data.info.fullName || "Your Name"}
         </h1>
         <hr className="border border-slate-400 w-full" />
-        <div className="flex flex-wrap gap-4 text-gray-600 mt-1 text-md">
+        <div className="flex flex-wrap gap-1 text-gray-600 mt-1 text-md  sm:gap-2 md:gap-4">
           <h1>{data.info.phone || "Phone Number"} |</h1>
 
           <h1>{data.info.email || "Email@example.com"} |</h1>
@@ -26,7 +26,7 @@ export const DefaultTemplate = ({ data }) => {
             Executive Summary{" "}
           </h1>
           <hr className="border border-slate-400 w-full" />
-          <p className="mr-5 py-2">
+          <p className="mr-5 py-2 text-gray-600">
             {data.info.summary ||
               "Fast-paced, creative web developer with 6 years of experience with extensive knowledge of HTML, CSS, JavaScript, XHTML, JQuery, PHP and other web programming languages. Strong proficiency in visual design and user interface design."}{" "}
           </p>
@@ -49,7 +49,7 @@ export const DefaultTemplate = ({ data }) => {
                   {exp.dates || "Jan,2024 - Present"}
                 </h1>
               </div>
-              <p className="text-gray-700 mt-1">
+              <p className="text-gray-700 mt-1 ">
                 {exp.description ||
                   "Describe your responsibilities, achievements, and impact in this role..."}
               </p>

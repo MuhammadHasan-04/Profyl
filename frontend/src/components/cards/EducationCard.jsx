@@ -29,7 +29,7 @@ export const EducationCard = ({ education, setEducation }) => {
           className="flex flex-col items-center text-blue-500"
         >
           <CirclePlus className="cursor-pointer" />
-          <p>Add More</p>
+          <p className="text-sm">Add More</p>
         </button>
       </div>
 
@@ -44,7 +44,8 @@ export const EducationCard = ({ education, setEducation }) => {
               value={edu.degree}
               onChange={(e) => handleChange(index, "degree", e.target.value)}
               placeholder="eg. Bachelors of Science"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 
@@ -70,7 +71,8 @@ export const EducationCard = ({ education, setEducation }) => {
                 value={edu.year}
                 onChange={(e) => handleChange(index, "year", e.target.value)}
                 placeholder="eg. 2026"
-                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300"
+                className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300 placeholder:text-sm
+md:placeholder:text-base"
               />
             </div>
           </div>
@@ -83,7 +85,8 @@ export const EducationCard = ({ education, setEducation }) => {
               value={edu.location}
               onChange={(e) => handleChange(index, "location", e.target.value)}
               placeholder="eg. Islamabad , Isb"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black placeholder:text-slate-300 transition-colors duration-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
           {education.length > 1 && (

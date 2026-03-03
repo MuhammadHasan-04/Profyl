@@ -26,10 +26,10 @@ export const ProjectsCard = ({ projects, setProjects }) => {
         <h1 className="font-serif text-3xl">Projects</h1>
         <button
           onClick={handleAdd}
-          className="flex flex-col items-center text-blue-500"
+          className="flex flex-col items-center text-blue-500 "
         >
           <CirclePlus className="cursor-pointer" />
-          <p>Add More</p>
+          <p className="text-sm">Add More</p>
         </button>
       </div>
 
@@ -44,7 +44,8 @@ export const ProjectsCard = ({ projects, setProjects }) => {
               onChange={(e) => handleChange(index, "title", e.target.value)}
               type="text"
               placeholder="AI Resume Builder"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 
@@ -57,7 +58,8 @@ export const ProjectsCard = ({ projects, setProjects }) => {
               onChange={(e) => handleChange(index, "tech", e.target.value)}
               type="text"
               placeholder="React, Node.js, MongoDB"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 
@@ -70,7 +72,8 @@ export const ProjectsCard = ({ projects, setProjects }) => {
               onChange={(e) => handleChange(index, "link", e.target.value)}
               type="text"
               placeholder="https://github.com/username/project"
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 
@@ -85,7 +88,8 @@ export const ProjectsCard = ({ projects, setProjects }) => {
                 handleChange(index, "description", e.target.value)
               }
               placeholder="Brief description of the project and your impact..."
-              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 resize-none"
+              className="border-0 border-b border-slate-300 bg-transparent py-2 px-1 outline-none focus:border-black transition-colors duration-300 placeholder:text-slate-300 resize-none placeholder:text-sm
+md:placeholder:text-base"
             />
           </div>
 

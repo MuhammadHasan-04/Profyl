@@ -227,9 +227,32 @@ export const MainPage = () => {
             </h1>
           </div>
           <div className="text-slate-500 flex flex-row gap-3 tracking-wide leading-relaxed uppercase">
-            <button className="cursor-pointer">Github</button>
-            <button className="cursor-pointer">Instagram</button>
-            <button className="cursor-pointer">Linkdin</button>
+            <div className="text-slate-500 flex flex-row gap-3 tracking-wide leading-relaxed uppercase">
+              <a
+                href="https://github.com/MuhammadHasan-04"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
+              >
+                Github
+              </a>
+              <a
+                href="https://www.instagram.com/hasan.__.altaf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/muhammadhasanaltaf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </footer>

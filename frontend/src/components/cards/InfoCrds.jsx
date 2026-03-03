@@ -10,7 +10,7 @@ export const InfoCrds = ({ info, setInfo }) => {
       <div className="">
         <div className="max-w-2xl flex flex-col gap-2 ">
           <h className="font-serif text-3xl ">Contact Details</h>
-          <p className="text-slate-500 leading-relaxed tracking-wide">
+          <p className="text-slate-500 leading-relaxed tracking-wide text-md">
             Establish your professional identity with a clean header. Use
             high-contrast typography for a lasting first impression.
           </p>
@@ -38,6 +38,8 @@ export const InfoCrds = ({ info, setInfo }) => {
     outline-none
     focus:border-black
     placeholder:text-slate-300
+    placeholder:text-sm
+md:placeholder:text-base
 
     transition-colors
     duration-300
@@ -69,6 +71,8 @@ export const InfoCrds = ({ info, setInfo }) => {
     focus:border-black
     transition-colors
     placeholder:text-slate-300
+    placeholder:text-sm
+md:placeholder:text-base
 
     duration-300
   "
@@ -99,6 +103,8 @@ export const InfoCrds = ({ info, setInfo }) => {
     focus:border-black
     transition-colors
     placeholder:text-slate-300
+    placeholder:text-sm
+md:placeholder:text-base
 
     duration-300
   "
@@ -130,6 +136,8 @@ export const InfoCrds = ({ info, setInfo }) => {
     transition-colors
     duration-300
     placeholder:text-slate-300
+    placeholder:text-sm
+md:placeholder:text-base
   "
               />
             </div>
@@ -158,6 +166,8 @@ export const InfoCrds = ({ info, setInfo }) => {
     focus:border-black
     transition-colors
     placeholder:text-slate-300
+    placeholder:text-sm
+md:placeholder:text-base
 
     duration-300
   "
@@ -167,7 +177,7 @@ export const InfoCrds = ({ info, setInfo }) => {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="summary"
-              className="text-[10px] font-bold uppercase tracking-widest text-slate-400"
+              className="text-[10px] font-bold uppercase tracking-widest text-slate-400 "
             >
               Professional Summary
             </label>
@@ -191,7 +201,9 @@ export const InfoCrds = ({ info, setInfo }) => {
       focus:border-black
       transition-colors
       duration-300
-      placeholder:text-slate-300
+     placeholder:text-slate-300
+placeholder:text-sm
+md:placeholder:text-base
       resize-none
     "
             />

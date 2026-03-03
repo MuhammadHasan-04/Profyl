@@ -29,6 +29,8 @@ export const SkillsCard = ({ skills, setSkills }) => {
               transition-colors
               duration-300
               placeholder:text-slate-300
+              placeholder:text-sm
+md:placeholder:text-base
             "
           />
         </div>
@@ -56,6 +58,8 @@ export const SkillsCard = ({ skills, setSkills }) => {
               transition-colors
               duration-300
               placeholder:text-slate-300
+              placeholder:text-sm
+md:placeholder:text-base
             "
           />
         </div>
