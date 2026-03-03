@@ -6,7 +6,7 @@ export const MainPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="w-full border-b border-gray-200">
+      <div className="max-w-7xl mx-auto border-b border-gray-200">
         <nav className=" mx-auto flex justify-between items-center px-15 py-5">
           <div
             className="flex items-center gap-2 cursor-pointer"
@@ -203,7 +203,10 @@ export const MainPage = () => {
             </p>
           </div>
 
-          <div className="mt-15 flex flex-col gap-3 items-center">
+          <div
+            onClick={() => navigate("/resumePreview")}
+            className="mt-15 flex flex-col gap-3 items-center cursor-pointer"
+          >
             <p className="uppercase font-medium tracking-widest leading-relaxed text-slate-900 text-md flex items-center gap-2">
               Create Your Profyl
               <span className="inline-block text-xl">➔</span>

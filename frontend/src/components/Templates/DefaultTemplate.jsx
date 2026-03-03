@@ -1,6 +1,6 @@
 import React from "react";
 
-export const LivePreview = ({ data }) => {
+export const DefaultTemplate = ({ data }) => {
   return (
     <>
       {/* fullName: "",

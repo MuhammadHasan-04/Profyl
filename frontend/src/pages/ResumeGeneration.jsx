@@ -2,13 +2,16 @@ import React from "react";
 import { FileText } from "lucide-react";
 import { useState } from "react";
 import { User, Briefcase, GraduationCap, Star, ScrollText } from "lucide-react";
-import { InfoCrds } from "../components/InfoCrds";
-import { ExperienceCard } from "../components/ExperienceCard";
-import { EducationCard } from "../components/EducationCard";
-import { ProjectsCard } from "../components/ProjectsCard";
-import { SkillsCard } from "../components/SkillsCard";
-import { LivePreview } from "../components/LivePreview";
-export const ResumeGeneration = () => {
+import { InfoCrds } from "../components/cards/InfoCrds";
+import { ExperienceCard } from "../components/cards/ExperienceCard";
+import { EducationCard } from "../components/cards/EducationCard";
+import { ProjectsCard } from "../components/cards/ProjectsCard";
+import { SkillsCard } from "../components/cards/SkillsCard";
+import { DefaultTemplate } from "../components/Templates/DefaultTemplate";
+import { CleanTemplate } from "../components/Templates/CleanTemplate";
+import { Navigate, useNavigate } from "react-router-dom";
+export const ResumeGeneration = ({ currentTemplate }) => {
+  const navigate = useNavigate();
   const [resumeData, setResumeData] = useState({
     info: {
       fullName: "",
@@ -43,6 +46,12 @@ export const ResumeGeneration = () => {
         </div>
 
         <div className="flex items-center gap-6">
+          <button
+            onClick={() => navigate("/templates")}
+            className="cursor-pointer"
+          >
+            Templates
+          </button>
           <button className="bg-black text-white px-3 py-2 sm:px-3 md:px-5 rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 shadow-sm hover:shadow-md">
             Export PDF
           </button>
@@ -113,7 +122,10 @@ export const ResumeGeneration = () => {
         </div>
 
         <div className="w-full flex justify-start p-10 lg:w-[60%]">
-          <LivePreview data={resumeData} />
+          {(!currentTemplate || currentTemplate == "default") && (
+            <DefaultTemplate data={resumeData} />
+          )}
+          {currentTemplate == "clean" && <CleanTemplate data={resumeData} />}
         </div>
       </div>
     </>
