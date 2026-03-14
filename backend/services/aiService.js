@@ -7,14 +7,21 @@ const openRouter = new OpenRouter({
   apiKey: process.env.OPENROUTER_API,
 });
 
-async function parseResumeAI({ resumeText }) {
+async function parseResumeAI(resumeText) {
   try {
+    // Safety check
+    resumeText = (resumeText || "")
+      .toString()
+      .replace(/[^\x00-\x7F]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
     const prompt = `
 You are an expert resume parser.
 
-Extract structured JSON from the following resume text.
+Extract structured JSON from the resume text.
 
-The JSON must exactly match this structure:
+Return JSON with this structure:
 
 {
   "info": {
@@ -58,20 +65,21 @@ The JSON must exactly match this structure:
 Resume text:
 ${resumeText}
 
-Return ONLY JSON. Do NOT add any explanations.
+Return ONLY JSON.
 `;
 
     const stream = await openRouter.chat.send({
       chatGenerationParams: {
-        model: "liquid/lfm-2.5-1.2b-thinking:free",
+        model: "openrouter/hunter-alpha",
         messages: [{ role: "user", content: prompt }],
         stream: true,
+        max_tokens: 1500,
       },
     });
 
     let fullContent = "";
 
-    console.log("Hello from liquid");
+    console.log("AI parsing started...\n");
 
     for await (const chunk of stream) {
       const content = chunk.choices?.[0]?.delta?.content;
@@ -86,18 +94,27 @@ Return ONLY JSON. Do NOT add any explanations.
       }
     }
 
-    console.log("\n\nContent generated successfully!\n");
+    console.log("\n\nAI generation finished\n");
 
-    // Remove markdown code fences if AI returns ```json
+    // Remove markdown formatting if present
     fullContent = fullContent.replace(/```json|```/g, "").trim();
-    console.log(fullContent);
-    // Parse JSON safely
-    const parsedJSON = JSON.parse(fullContent);
+
+    let parsedJSON;
+
+    try {
+      parsedJSON = JSON.parse(fullContent);
+    } catch (err) {
+      console.log("\n⚠ AI returned invalid JSON:");
+      console.log(fullContent);
+
+      throw new Error("AI returned incomplete JSON");
+    }
 
     return parsedJSON;
   } catch (error) {
     console.error("AI Resume Parsing Error:", error.message);
 
+    // fallback structure
     return {
       info: {
         fullName: "",
